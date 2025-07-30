@@ -2,139 +2,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>India Opportunity Fund - Investment Interest Form</title>
-    
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* (Your existing CSS remains unchanged) */
-        /* Styles omitted here for brevity, since you posted the full CSS */
-        /* Paste your full original style block here as-is */
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>India Opportunity Fund - Investment Interest Form</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Your original styles remain unchanged */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-container {
+      max-width: 800px;
+      margin: 3rem auto;
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .form-header h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .form-header p {
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    .form-group, .form-row {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .form-group {
+      flex: 1;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .required {
+      color: red;
+    }
+
+    .checkbox-group {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .checkbox-item {
+      margin-bottom: 0.6rem;
+    }
+
+    .checkbox-item input {
+      margin-right: 0.5rem;
+    }
+
+    .submit-btn {
+      background-color: #0056b3;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #004090;
+    }
+
+    .disclaimer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-    <div class="form-container">
-        <div class="form-header">
-            <h1>Proflex India Opportunity Fund</h1>
-            <p>Investment Interest & Information Request</p>
-        </div>
-        
-        <div class="form-body">
-            <form action="https://parthkhanna.app.n8n.cloud/webhook-test/00dc1758-832f-4572-a261-8b6896dfa9ed" method="POST">
-                <!-- Personal Information -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="firstName">First Name <span class="required">*</span></label>
-                        <input type="text" id="firstName" name="firstName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name <span class="required">*</span></label>
-                        <input type="text" id="lastName" name="lastName" required>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Email Address <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number <span class="required">*</span></label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                </div>
-                
-                <!-- Investment Information -->
-                <div class="form-group">
-                    <label for="investmentSize">Anticipated Investment Size <span class="required">*</span></label>
-                    <select id="investmentSize" name="investmentSize" required>
-                        <option value="">Please select...</option>
-                        <option value="250k-500k">$250,000 - $500,000</option>
-                        <option value="500k-1m">$500,000 - $1,000,000</option>
-                        <option value="1m-2.5m">$1,000,000 - $2,500,000</option>
-                        <option value="2.5m-5m">$2,500,000 - $5,000,000</option>
-                        <option value="5m+">$5,000,000+</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="investmentExperience">Previous Investment Experience in India</label>
-                    <select id="investmentExperience" name="investmentExperience">
-                        <option value="">Please select...</option>
-                        <option value="none">No previous experience</option>
-                        <option value="limited">Limited experience (&lt; $100K invested)</option>
-                        <option value="moderate">Moderate experience ($100K-$500K invested)</option>
-                        <option value="extensive">Extensive experience (&gt; $500K invested)</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="investmentMethod">Current Method of India Investment (if any)</label>
-                    <select id="investmentMethod" name="investmentMethod">
-                        <option value="">Please select...</option>
-                        <option value="none">No current India investments</option>
-                        <option value="direct-stocks">Direct Indian stocks</option>
-                        <option value="adr-etf">ADRs/India ETFs</option>
-                        <option value="mutual-funds">India-focused mutual funds</option>
-                        <option value="private-equity">Private equity/venture capital</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="investmentTimeline">Investment Timeline</label>
-                    <select id="investmentTimeline" name="investmentTimeline">
-                        <option value="">Please select...</option>
-                        <option value="immediate">Ready to invest immediately</option>
-                        <option value="1-3months">Within 1-3 months</option>
-                        <option value="3-6months">Within 3-6 months</option>
-                        <option value="6-12months">Within 6-12 months</option>
-                        <option value="information-only">Information gathering only</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="taxConcerns">Specific Tax/Compliance Concerns</label>
-                    <textarea id="taxConcerns" name="taxConcerns" placeholder="Please describe any specific tax or compliance concerns you have with India investments (PFIC, FBAR, etc.)"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="questions">Additional Questions or Comments</label>
-                    <textarea id="questions" name="questions" placeholder="Any specific questions about the fund, strategy, or process?"></textarea>
-                </div>
-                
-                <!-- Checkboxes -->
-                <div class="checkbox-group">
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="accredited" name="accredited" required>
-                        <label for="accredited">I confirm that I am an accredited investor as defined under U.S. securities laws <span class="required">*</span></label>
-                    </div>
-                    
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="qualified" name="qualified">
-                        <label for="qualified">I am a qualified purchaser (net worth &gt; $5M excluding primary residence)</label>
-                    </div>
-                    
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="updates" name="updates">
-                        <label for="updates">I would like to receive updates about the Proflex India Opportunity Fund and related investment opportunities</label>
-                    </div>
-                </div>
-                
-                <button type="submit" class="submit-btn">Submit Investment Interest</button>
-                
-                <div class="disclaimer">
-                    <p><strong>Important Disclosure:</strong> Proflex Finance LLC (CRD# 334262) is a registered investment advisor. This form does not constitute an offer to sell or solicitation to buy any securities. Investment in the fund is subject to substantial risks and is suitable only for sophisticated investors. Past performance is not indicative of future results. Please review our Form ADV and fund documents before making any investment decisions. All information provided will be kept confidential and used solely for investment advisory purposes.</p>
-                </div>
-            </form>
-        </div>
+  <div class="form-container">
+    <div class="form-header">
+      <h1>Proflex India Opportunity Fund</h1>
+      <p>Investment Interest & Information Request</p>
     </div>
+
+    <div class="form-body">
+      <form 
+        name="investment-interest" 
+        method="POST" 
+        action="https://parthkhanna.app.n8n.cloud/webhook-test/00dc1758-832f-4572-a261-8b6896dfa9ed" 
+        data-netlify="true" 
+        netlify-honeypot="bot-field"
+      >
+        <!-- Hidden Inputs for Netlify -->
+        <input type="hidden" name="form-name" value="investment-interest" />
+        <p hidden>
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+
+        <!-- Personal Info -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name <span class="required">*</span></label>
+            <input type="text" id="firstName" name="firstName" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name <span class="required">*</span></label>
+            <input type="text" id="lastName" name="lastName" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+        </div>
+
+        <!-- Investment Info -->
+        <div class="form-group">
+          <label for="investmentSize">Anticipated Investment Size <span class="required">*</span></label>
+          <select id="investmentSize" name="investmentSize" required>
+            <option value="">Please select...</option>
+            <option value="250k-500k">$250,000 - $500,000</option>
+            <option value="500k-1m">$500,000 - $1,000,000</option>
+            <option value="1m-2.5m">$1,000,000 - $2,500,000</option>
+            <option value="2.5m-5m">$2,500,000 - $5,000,000</option>
+            <option value="5m+">$5,000,000+</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="investmentExperience">Previous Investment Experience in India</label>
+          <select id="investmentExperience" name="investmentExperience">
+            <option value="">Please select...</option>
+            <option value="none">No previous experience</option>
+            <option value="limited">Limited experience (&lt; $100K invested)</option>
+            <option value="moderate">Moderate experience ($100K-$500K invested)</option>
+            <option value="extensive">Extensive experience (&gt; $500K invested)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="investmentMethod">Current Method of India Investment (if any)</label>
+          <select id="investmentMethod" name="investmentMethod">
+            <option value="">Please select...</option>
+            <option value="none">No current India investments</option>
+            <option value="direct-stocks">Direct Indian stocks</option>
+            <option value="adr-etf">ADRs/India ETFs</option>
+            <option value="mutual-funds">India-focused mutual funds</option>
+            <option value="private-equity">Private equity/venture capital</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="investmentTimeline">Investment Timeline</label>
+          <select id="investmentTimeline" name="investmentTimeline">
+            <option value="">Please select...</option>
+            <option value="immediate">Ready to invest immediately</option>
+            <option value="1-3months">Within 1-3 months</option>
+            <option value="3-6months">Within 3-6 months</option>
+            <option value="6-12months">Within 6-12 months</option>
+            <option value="information-only">Information gathering only</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="taxConcerns">Specific Tax/Compliance Concerns</label>
+          <textarea id="taxConcerns" name="taxConcerns" placeholder="Please describe any specific tax or compliance concerns you have with India investments (PFIC, FBAR, etc.)"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="questions">Additional Questions or Comments</label>
+          <textarea id="questions" name="questions" placeholder="Any specific questions about the fund, strategy, or process?"></textarea>
+        </div>
+
+        <!-- Checkboxes -->
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" id="accredited" name="accredited" required />
+            <label for="accredited">I confirm that I am an accredited investor as defined under U.S. securities laws <span class="required">*</span></label>
+          </div>
+
+          <div class="checkbox-item">
+            <input type="checkbox" id="qualified" name="qualified" />
+            <label for="qualified">I am a qualified purchaser (net worth &gt; $5M excluding primary residence)</label>
+          </div>
+
+          <div class="checkbox-item">
+            <input type="checkbox" id="updates" name="updates" />
+            <label for="updates">I would like to receive updates about the Proflex India Opportunity Fund and related investment opportunities</label>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Investment Interest</button>
+
+        <div class="disclaimer">
+          <p><strong>Important Disclosure:</strong> Proflex Finance LLC (CRD# 334262) is a registered investment advisor. This form does not constitute an offer to sell or solicitation to buy any securities. Investment in the fund is subject to substantial risks and is suitable only for sophisticated investors. Past performance is not indicative of future results. Please review our Form ADV and fund documents before making any investment decisions. All information provided will be kept confidential and used solely for investment advisory purposes.</p>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
 <!-- END OF HTML -->
-
