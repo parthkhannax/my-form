@@ -1,4 +1,3 @@
-<!-- START OF HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,104 +11,122 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    /* Your original styles remain unchanged */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f8f9fa;
-      margin: 0;
-      padding: 0;
+      background: linear-gradient(135deg, #f0fdfa 0%, #e6fffa 100%);
+      padding: 20px;
+      min-height: 100vh;
     }
-
     .form-container {
-      max-width: 800px;
-      margin: 3rem auto;
-      background-color: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
     }
-
-    .form-header h1 {
-      margin-top: 0;
-      font-size: 1.8rem;
+    .form-header {
+      background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+      color: white;
+      padding: 30px;
+      text-align: center;
     }
-
-    .form-header p {
-      color: #555;
-      margin-bottom: 2rem;
-    }
-
-    .form-group, .form-row {
-      margin-bottom: 1.2rem;
-    }
-
+    .form-header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+    .form-header p { font-size: 16px; opacity: 0.9; }
+    .form-body { padding: 40px 30px; }
+    .form-group { margin-bottom: 24px; }
     .form-row {
-      display: flex;
-      gap: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
-
-    .form-group {
-      flex: 1;
+    @media (max-width: 640px) {
+      .form-row { grid-template-columns: 1fr; gap: 16px; }
     }
-
     label {
       display: block;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      color: #0f766e;
+      margin-bottom: 8px;
+      font-size: 14px;
     }
-
+    .required { color: #dc2626; }
     input[type="text"],
     input[type="email"],
     input[type="tel"],
     select,
     textarea {
       width: 100%;
-      padding: 0.6rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
+      padding: 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+      background: white;
     }
-
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #14b8a6;
+      box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+    }
+    select { cursor: pointer; }
     textarea {
-      min-height: 100px;
       resize: vertical;
+      min-height: 100px;
     }
-
-    .required {
-      color: red;
-    }
-
-    .checkbox-group {
-      margin-top: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
+    .checkbox-group { margin: 24px 0; }
     .checkbox-item {
-      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
     }
-
-    .checkbox-item input {
-      margin-right: 0.5rem;
+    .checkbox-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-right: 12px;
+      margin-top: 2px;
+      accent-color: #14b8a6;
     }
-
+    .checkbox-item label {
+      margin-bottom: 0;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #374151;
+    }
     .submit-btn {
-      background-color: #0056b3;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
+      width: 100%;
+      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      color: white;
+      padding: 16px 24px;
       border: none;
-      border-radius: 6px;
-      font-size: 1rem;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
       cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 20px;
     }
-
     .submit-btn:hover {
-      background-color: #004090;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(20, 184, 166, 0.3);
     }
-
+    .submit-btn:active { transform: translateY(0); }
     .disclaimer {
-      margin-top: 2rem;
-      font-size: 0.85rem;
-      color: #555;
+      background: #f0fdfa;
+      border-left: 4px solid #14b8a6;
+      padding: 16px;
+      margin-top: 24px;
+      border-radius: 0 8px 8px 0;
+    }
+    .disclaimer p {
+      font-size: 12px;
+      color: #374151;
+      line-height: 1.5;
     }
   </style>
 </head>
@@ -122,15 +139,15 @@
 
     <div class="form-body">
       <form 
-        name="investment-interest" 
-        method="POST" 
-        action="https://parthkhanna.app.n8n.cloud/webhook-test/00dc1758-832f-4572-a261-8b6896dfa9ed" 
-        data-netlify="true" 
+        name="investment-interest-form"
+        method="POST"
+        action="https://parthkhanna.app.n8n.cloud/webhook-test/00dc1758-832f-4572-a261-8b6896dfa9ed"
+        data-netlify="true"
         netlify-honeypot="bot-field"
       >
-        <!-- Hidden Inputs for Netlify -->
-        <input type="hidden" name="form-name" value="investment-interest" />
-        <p hidden>
+        <!-- Netlify Honeypot -->
+        <input type="hidden" name="form-name" value="investment-interest-form" />
+        <p style="display:none;">
           <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
         </p>
 
@@ -199,9 +216,9 @@
           <select id="investmentTimeline" name="investmentTimeline">
             <option value="">Please select...</option>
             <option value="immediate">Ready to invest immediately</option>
-            <option value="1-3months">Within 1-3 months</option>
-            <option value="3-6months">Within 3-6 months</option>
-            <option value="6-12months">Within 6-12 months</option>
+            <option value="1-3months">Within 1–3 months</option>
+            <option value="3-6months">Within 3–6 months</option>
+            <option value="6-12months">Within 6–12 months</option>
             <option value="information-only">Information gathering only</option>
           </select>
         </div>
@@ -222,12 +239,10 @@
             <input type="checkbox" id="accredited" name="accredited" required />
             <label for="accredited">I confirm that I am an accredited investor as defined under U.S. securities laws <span class="required">*</span></label>
           </div>
-
           <div class="checkbox-item">
             <input type="checkbox" id="qualified" name="qualified" />
             <label for="qualified">I am a qualified purchaser (net worth &gt; $5M excluding primary residence)</label>
           </div>
-
           <div class="checkbox-item">
             <input type="checkbox" id="updates" name="updates" />
             <label for="updates">I would like to receive updates about the Proflex India Opportunity Fund and related investment opportunities</label>
@@ -244,4 +259,4 @@
   </div>
 </body>
 </html>
-<!-- END OF HTML -->
+
